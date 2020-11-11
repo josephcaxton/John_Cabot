@@ -15,7 +15,14 @@ apt_package "vim" do
     action :install
    end
 
-#apt_update
+template '/var/www/html/index.html' do
+    source 'index.html.erb'
+    owner 'www-data'
+    group 'www-data'
+    mode '0644'
+    action :create
+end
+
 
 
 

@@ -21,6 +21,11 @@ template '/var/www/html/index.html' do
     group 'www-data'
     mode '0644'
     action :create
+    variables({
+        :platform => node['platform'],
+        :version => node['platform_version'],
+        :ip => node['ipaddress']
+    })
 end
 
 directory '/var/www/html/images' do

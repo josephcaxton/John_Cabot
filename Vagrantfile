@@ -16,6 +16,6 @@ Vagrant.configure("2") do |config|
     chef.arguments = "--chef-license accept"
     chef.run_list = [
       'recipe[number13::apache]'
-      ]
-    
+      ] 
   end
+end

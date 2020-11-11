@@ -23,6 +23,24 @@ template '/var/www/html/index.html' do
     action :create
 end
 
+directory '/var/www/html/images' do
+    owner 'www-data'
+    group 'www-data'
+    mode '0755'
+    recursive true
+    action :create
+end
+remote_file '/var/www/html/images/rick.gif' do
+    source 'https://media.giphy.com/media/8h1Zhv62CVXEc/giphy.gif'
+    owner 'www-data'
+    group 'www-data'
+    mode '0644'
+    action :create
+end
+
+
+
+
 
 
 
